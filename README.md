@@ -1,4 +1,5 @@
-run npm start
+run in root
+### npm start
 
 dependacies :
 Python 3.x
