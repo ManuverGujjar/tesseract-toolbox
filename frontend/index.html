@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script>
+            let $ = require("jquery");
+        </script>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <style>
+            .none {
+                display: none;
+            }
+            #downloader {
+                width: 50%;
+                margin-left: 23%;
+            }
+            #extractor {
+                display: none;
+                width: 50%;
+                margin-left: 23%;
+            }
+            #text,
+            #text-download {
+                width: 100%;
+            }
+            #status-download {
+                overflow: scroll;
+                height: 40vh;
+                padding: 25px;
+            }
+
+            .contain {
+                margin-bottom: 10%;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="nav contain nav-tabs nav-justified">
+            <li class="nav-item">
+                <a class="nav-link active" onclick="changeNav(this);" href="#"
+                    >Downloader</a
+                >
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" onclick="changeNav(this);" href="#"
+                    >Extractor</a
+                >
+            </li>
+        </ul>
+        <div id="downloader" class="form-group">
+            <button class="open btn btn-primary w-100 mt-3">
+                <span class="spinner-border spinner-border-sm mr-3 none"></span>
+                Open Text File
+            </button>
+            <button id="open-path" class="btn btn-danger w-100 mt-3">
+                <span class="spinner-border spinner-border-sm mr-3 none"></span>
+                Data Save Path
+            </button>
+            <input
+                id="sub"
+                type="text"
+                placeholder="Main Subject"
+                class="form-control w-100 mt-3"
+            />
+            <input
+                id="not"
+                type="text"
+                placeholder="No of Results for each"
+                class="form-control w-100 mt-3"
+            />
+            <button id="download-start" class="btn btn-success w-100 mt-3">
+                <span class="spinner-border spinner-border-sm mr-3 none"></span>
+                Start Downloading
+            </button>
+            <div id="status-download"></div>
+        </div>
+
+        <div id="extractor" class="form-group">
+            <button class="open btn btn-primary w-100 mt-3">
+                Open Image
+            </button>
+            <button id="extract-start" class="btn btn-outline-info w-100 mt-3">
+                <span class="spinner-border spinner-border-sm mr-3 none"></span>
+                Start Extracting
+            </button>
+            <textarea id="text" rows="15" class="mt-2"> </textarea>
+            <button id="save-btn" class="btn btn-secondary w-100 mt-3">
+                <span class="spinner-border spinner-border-sm mr-3 none"></span>
+                Save
+            </button>
+        </div>
+        <script src="index.js"></script>
+        <script src="files.js"></script>
+    </body>
+</html>
